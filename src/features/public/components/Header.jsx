@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import logo from '../assets/MK-Logo.jpeg';
 
 const navLinks = [
   /* { label: 'Explorar Productos', to: '/explorarProductos' }, */
@@ -32,13 +33,26 @@ export default function Header() {
           className="flex items-center gap-3 group focus:outline-hidden"
           onClick={() => setMenuAbierto(false)}
         >
-          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-brand-primary to-[#f48f76] flex items-center justify-center text-white shadow-md shadow-brand-primary/20 group-hover:scale-105 transition-transform duration-200">
-            <svg className="w-6 h-6 stroke-current fill-none stroke-2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-              <line x1="12" x2="12" y1="22.08" y2="12" />
-            </svg>
-          </div>
+      <div className="group relative w-18 h-18 rounded-2xl p-[2px] overflow-hidden transition-transform duration-200 hover:scale-105">
+
+        {/* Destello naranja giratorio */}
+        <div
+          className="absolute inset-[-100%] animate-[spin_3s_linear_infinite]"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 0deg, transparent 300deg, #f48f76 325deg, #ff9d42 340deg, #fff1c2 350deg, transparent 360deg)",
+          }}
+        />
+
+        {/* Fondo y logo */}
+        <div className="relative z-10 w-full h-full rounded-[14px] bg-white p-1 overflow-hidden">
+          <img
+            src={logo}
+            alt="Logo de MakerBridge"
+            className="w-full h-full object-contain rounded-xl"
+          />
+        </div>
+      </div>
           <div className="flex flex-col">
             <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">MakerBridge</span>
             <span className="text-[10px] uppercase font-bold tracking-widest text-brand-primary">3D Printing Network</span>
