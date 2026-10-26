@@ -107,9 +107,9 @@ const DatosPersonales = ({ perfil, onSave }) => {
             value={perfil.email}
             className={`${inputBase} border-gray-300 bg-gray-50 text-brand-dark-muted cursor-not-allowed`}
           />
-          <p className="mt-1.5 text-xs text-brand-dark-muted">
+          {/* <p className="mt-1.5 text-xs text-brand-dark-muted">
             Es el usuario con el que ingresás a MakerBridge, por eso no se puede cambiar.
-          </p>
+          </p> */}
         </div>
 
         {/* Teléfono + Localidad */}
